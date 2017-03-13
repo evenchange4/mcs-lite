@@ -2,12 +2,18 @@ import React, { PropTypes } from 'react';
 import { Button, Input } from 'mcs-lite-ui';
 import Helmet from 'react-helmet';
 import Logo from '../../components/Logo';
-import { StyledHr, Layout, Form } from './styled-components';
+import { ErrorMessage, StyledHr, Layout, Form } from './styled-components';
 
 class Signin extends React.Component {
   static propTypes = {
-    getMessages: PropTypes.func.isRequired,
+    // Redux State
+    errorMessage: PropTypes.string,
+
+    // Redux Action
     tryEnter: PropTypes.func.isRequired,
+
+    // React-intl I18n
+    getMessages: PropTypes.func.isRequired,
   }
   state = { email: '', password: '' };
   componentWillMount = () => this.props.tryEnter(); // Hint: When cookieToken avaliable
@@ -15,13 +21,14 @@ class Signin extends React.Component {
   render() {
     const { email, password } = this.state;
     const { onChange } = this;
-    const { getMessages: t } = this.props;
+    const { errorMessage, getMessages: t } = this.props;
 
     return (
       <Layout>
         <Helmet title={t('signin')} />
 
         <Logo />
+        {errorMessage && <ErrorMessage color="error">{errorMessage}</ErrorMessage>}
         <StyledHr>{t('welcome')}</StyledHr>
 
         <Form method="post" action="/oauth/login/mobile">

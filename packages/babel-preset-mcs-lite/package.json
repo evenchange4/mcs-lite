@@ -1,6 +1,6 @@
 {
   "name": "babel-preset-mcs-lite",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Babel preset used by MCS Lite",
   "repository": "evenchange4/mcs-lite",
   "author": "Michael Hsu <evenchange4@gmail.com>",
@@ -23,12 +23,11 @@
     "babel-plugin-import": "^1.1.1",
     "babel-plugin-recharts": "^1.1.0",
     "babel-plugin-styled-components": "^1.0.0",
-    "babel-preset-latest": "^6.22.0",
-    "babel-preset-react": "^6.23.0",
+    "babel-preset-react-app": "^2.2.0",
     "babel-preset-stage-0": "^6.22.0"
   },
   "devDependencies": {
-    "babel-core": "^6.23.1",
+    "babel-core": "^6.24.0",
     "jest": "^19.0.2"
   }
 }

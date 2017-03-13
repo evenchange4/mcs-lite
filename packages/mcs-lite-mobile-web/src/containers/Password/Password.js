@@ -6,11 +6,15 @@ import { Link } from 'react-router';
 import StyledLink from '../../components/StyledLink';
 import { Container, Label, ButtonWrapper, StyledP } from './styled-components';
 import updatePathname from '../../utils/updatePathname';
+import validators from './validators';
 
 class Password extends React.Component {
   static propTypes = {
-    getMessages: PropTypes.func.isRequired,
+    // Redux Action
     changePassword: PropTypes.func.isRequired,
+
+    // React-intl I18n
+    getMessages: PropTypes.func.isRequired,
   }
   state = { new1: '', new2: '' };
   onChange = e => this.setState({ [e.target.name]: e.target.value });
@@ -25,7 +29,8 @@ class Password extends React.Component {
     const { new1, new2 } = this.state;
     const { onChange, onSubmit } = this;
     const { getMessages: t } = this.props;
-    const isNew2Error = new1 && new2 && new1 !== new2;
+    const isNew1Error = validators.isLt8(new1);
+    const isNew2Error = validators.isNotEqual(new1, new2);
 
     return (
       <div>
@@ -54,8 +59,11 @@ class Password extends React.Component {
                   placeholder={t('newPassword.placeholder')}
                   type="password"
                   required
+                  kind={isNew1Error ? 'error' : 'primary'}
                 />
+                {isNew1Error && <StyledP color="error">{t('lengthError')}</StyledP>}
               </div>
+
               <div>
                 <Label htmlFor="new2">{t('newPasswordAgain.label')}</Label>
                 <Input

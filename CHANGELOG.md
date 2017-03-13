@@ -1,5 +1,96 @@
 # MCS Lite changelogs
 
+## Released (2017-03-13)
+
+### Bump Versions
+
+-   babel-preset-mcs-lite@0.1.2
+-   mcs-lite-connect@0.1.2
+-   mcs-lite-demo-nextjs@0.1.8
+-   mcs-lite-icon@0.1.6
+-   mcs-lite-mobile-web@0.2.0
+-   mcs-lite-scripts@0.1.4
+-   mcs-lite-theme@0.1.2
+-   mcs-lite-ui@0.2.0
+-   react-intl-cra@0.1.4
+-   react-intl-inject-hoc@0.1.4
+
+#### :rocket: New Feature
+* `mcs-lite-mobile-web`
+  * [#217](https://github.com/evenchange4/mcs-lite/pull/217) feat(Signin): add errorMessage feature. ([@evenchange4](https://github.com/evenchange4))
+  * [#216](https://github.com/evenchange4/mcs-lite/pull/216) feat(Password): add validators. ([@evenchange4](https://github.com/evenchange4))
+* `mcs-lite-connect`, `mcs-lite-mobile-web`
+  * [#211](https://github.com/evenchange4/mcs-lite/pull/211) feat(Datapoints): add query feautre. ([@evenchange4](https://github.com/evenchange4))
+
+#### :boom: Breaking Change
+* `mcs-lite-mobile-web`
+  * [#217](https://github.com/evenchange4/mcs-lite/pull/217) feat(Signin): add errorMessage feature. ([@evenchange4](https://github.com/evenchange4))
+  
+  Replaced url `/signin` with `/login`.
+  
+* `mcs-lite-mobile-web`, `mcs-lite-ui`
+  * [#215](https://github.com/evenchange4/mcs-lite/pull/215) feat(DataChannelAdapter): update type with uppercase. ([@evenchange4](https://github.com/evenchange4))
+  
+  ```diff
+  -        type: 'submit'|'change'|'clear', // event type
+  +        type: 'SUBMIT'|'CHANGE'|'CLEAR', // event type
+  ```
+  
+  * [#214](https://github.com/evenchange4/mcs-lite/pull/214) fix(DataChannelAdapter): handle default value of dataChannelProps.values. ([@evenchange4](https://github.com/evenchange4))
+  
+  ```diff
+  -                    values: datachannel.datapoints.values || {},
+  +                    values: datachannel.datapoints.values,
+  ```
+
+#### :bug: Bug Fix
+* `mcs-lite-mobile-web`
+  * [#219](https://github.com/evenchange4/mcs-lite/pull/219) fix(CSS): remove duplicate normalize.css. ([@evenchange4](https://github.com/evenchange4))
+* `mcs-lite-ui`
+  * [#209](https://github.com/evenchange4/mcs-lite/pull/209) test(DataChannelAdapter): add tests for eventHandler. ([@evenchange4](https://github.com/evenchange4))
+
+#### :nail_care: Enhancement
+* `mcs-lite-mobile-web`, `mcs-lite-ui`
+  * [#214](https://github.com/evenchange4/mcs-lite/pull/214) fix(DataChannelAdapter): handle default value of dataChannelProps.values. ([@evenchange4](https://github.com/evenchange4))
+
+#### :memo: Documentation
+* `babel-preset-mcs-lite`, `mcs-lite-connect`, `mcs-lite-scripts`, `mcs-lite-theme`, `mcs-lite-ui`, `react-intl-inject-hoc`
+  * [#218](https://github.com/evenchange4/mcs-lite/pull/218) chore(ncu): upgrade npm_modules (babel, d3-color). ([@evenchange4](https://github.com/evenchange4))
+
+#### :house: Internal
+* `babel-preset-mcs-lite`, `mcs-lite-connect`, `mcs-lite-scripts`, `mcs-lite-theme`, `mcs-lite-ui`, `react-intl-inject-hoc`
+  * [#218](https://github.com/evenchange4/mcs-lite/pull/218) chore(ncu): upgrade npm_modules (babel, d3-color). ([@evenchange4](https://github.com/evenchange4))
+* `babel-preset-mcs-lite`, `mcs-lite-mobile-web`, `mcs-lite-scripts`, `mcs-lite-ui`
+  * [#210](https://github.com/evenchange4/mcs-lite/pull/210) feat(babel-preset): switch to babel-preset of CRA. ([@evenchange4](https://github.com/evenchange4))
+
+#### Committers: 1
+- Michael Hsu ([evenchange4](https://github.com/evenchange4))
+
+----
+
+## Released (2017-03-09)
+
+### Bump Versions
+
+-   mcs-lite-demo-nextjs@0.1.7
+-   mcs-lite-introduction@0.1.4
+-   mcs-lite-mobile-web@0.1.9
+-   mcs-lite-ui@0.1.7
+
+#### :rocket: New Feature
+* `mcs-lite-introduction`
+  * [#205](https://github.com/evenchange4/mcs-lite/pull/205) feat(mcs-lite-introduction): change the folder name to lower cases and add i18n feature. ([@dariachen](https://github.com/dariachen))
+
+#### :bug: Bug Fix
+* `mcs-lite-ui`
+  * [#208](https://github.com/evenchange4/mcs-lite/pull/208) test(DataChannelAdapter): add tests. ([@evenchange4](https://github.com/evenchange4))
+
+#### Committers: 1
+- Daria Chen ([dariachen](https://github.com/dariachen))
+- Michael Hsu ([evenchange4](https://github.com/evenchange4))
+
+----
+
 ## Released (2017-03-09)
 
 ### Bump Versions
